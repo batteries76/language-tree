@@ -1,0 +1,33 @@
+<p>
+  language-tree works!
+  does it?
+</p>
+<div class="container" (click)="goBackUp()">
+  <div class="card card-block">
+    <h4 class="card-title">Back up the Tree?</h4>
+    <p class="card-text">Click to go up a level</p>
+    <a href="#" class="card-link">Card link</a>
+    <a href="#" class="card-link">Another link</a>
+  </div>
+</div>
+<div class="container">
+  <div class="card card-block">
+    <h4 class="card-title">{{ languageHead?.name }}</h4>
+    <p class="card-text">{{ languageHead?.alive }}</p>
+    <a href="#" class="card-link">Card link</a>
+    <a href="#" class="card-link">Another link</a>
+  </div>
+</div>
+<div class="container">
+  <div class="row" *ngFor="let child of languageHead?.children">
+    <div class="card card-block w-25" (click)="makeNewHead(child)">
+      <h4 class="card-title">{{ child?.name }}</h4>
+      <p class="card-text">{{ child?.alive }}</p>
+      <a href="#" class="card-link">Card link</a>
+      <a href="#" class="card-link">Another link</a>
+    </div>
+  </div>
+</div>
+
+<app-map-area>
+</app-map-area>
